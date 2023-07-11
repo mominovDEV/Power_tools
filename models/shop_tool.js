@@ -17,15 +17,18 @@ const Shop_tool = sequelize.define(
       type: DataTypes.INTEGER,
     },
     rent_price: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(15, 2),
     },
     tool_price: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(15, 2),
     },
   },
   {
     // freezeTableName:true
+    timestamps: false,
   }
 );
 
-module.exports = Owner;
+// Shop.belongsToMany(Tool,{through:Shop_tool});
+
+module.exports = Shop_tool;

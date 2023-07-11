@@ -1,6 +1,7 @@
 const sequelize = require("../config/db");
 
 const { DataTypes } = require("sequelize");
+const Shop = require("./shop");
 
 const Owner = sequelize.define(
   "owner",
@@ -10,22 +11,18 @@ const Owner = sequelize.define(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    owner_name: {
       type: DataTypes.STRING, // default 255 turadi
     },
-    Owner_phone_number: {
+    owner_phone_number: {
       type: DataTypes.STRING(15),
-    },
-    Owner_address: {
-      type: DataTypes.STRING,
-    },
-    otp_id: {
-      type: DataTypes.INTEGER,
     },
   },
   {
-    // freezeTableName:true
+    timestamps: false,
   }
 );
+Shop.belongsTo(Owner);
+Owner.hasMany(Shop);
 
 module.exports = Owner;

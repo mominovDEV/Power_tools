@@ -15,7 +15,7 @@ app.use(router());
 async function start() {
   try {
     await sequelize.authenticate();
-    await Client.sync();
+    await sequelize.sync();
     console.log("Connect has been established successpully.");
     app.listen(PORT, () => {
       console.log(`Server ${PORT}-portda ishga tushdi`);
