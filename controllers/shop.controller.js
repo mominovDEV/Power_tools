@@ -2,10 +2,10 @@ const Shop = require("../models/shop");
 
 const addShop = async (ctx) => {
   try {
-    const { shop, owner_id, phone_number, district_id, adress, location } =   
+    const { name, owner_id, phone_number, district_id, adress, location } =   
       ctx.request.body;
     const newShop = await Shop.create({
-      shop,
+      name,
       owner_id,
       phone_number,
       district_id,

@@ -1,14 +1,15 @@
 const Koa = require("koa");
-const Client = require("./models/client");
 const config = require("config");
 const sequelize = require("./config/db");
+const bodyparser = require("koa-bodyparser");
 
 const router = require("./routes/index.routes");
 
-const PORT = config.get("port") || 3030;    
+const PORT = config.get("port") || 3030;
 
 const app = new Koa();
 
+app.use(bodyparser());
 
 app.use(router());
 

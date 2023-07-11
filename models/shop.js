@@ -10,7 +10,7 @@ const Shop = sequelize.define(
       primaryKey: true,
       autoIncrement: true,
     },
-    shop: {
+    name: {
       type: DataTypes.STRING, // default 255 turadi
     },
     owner_id: {
