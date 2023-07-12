@@ -1,6 +1,8 @@
 const sequelize = require("../config/db");
 
 const { DataTypes } = require("sequelize");
+const Client = require("./client");
+const Shop_tool = require("./shop_tool");
 
 const Order = sequelize.define(
   "order",
@@ -30,5 +32,6 @@ const Order = sequelize.define(
     // freezeTableName:true
   }
 );
+
 
 module.exports = Order;

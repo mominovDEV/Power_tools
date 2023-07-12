@@ -1,6 +1,7 @@
 const sequelize = require("../config/db");
 
 const { DataTypes } = require("sequelize");
+const Order = require("./order");
 
 const Shop_tool = sequelize.define(
   "shop_tool",
@@ -29,6 +30,9 @@ const Shop_tool = sequelize.define(
   }
 );
 
-// Shop.belongsToMany(Tool,{through:Shop_tool});
+// Order.belongsTo(Shop_tool);
+// Shop_tool.hasMany(Order);
+
+// Shop.belongsToMan(Tool,{through:Shop_tool});
 
 module.exports = Shop_tool;
